@@ -11,17 +11,31 @@
 <body>
     <p>Youtube Subscribe Button</Button></p>
     <button onclick="
-   const buttonElement = document.querySelector('.js-subscribe-button');
-   
-   if (buttonElement.innerHTML === 'Subscribe') {
-        buttonElement.innerHTML = 'Subscribed';}
-        else {
-            buttonElement.innerHTML = 'Subscribe';}
-    " class="js-subscribe-button">Subscribe</button>
+        subscribe();
+    " class="js-subscribe-button">
+        Subscribe
+    </button>
     <!--just to add notes-->
     <script>
+        function subscribe() {
+            const buttonElement = document.querySelector('.js-subscribe-button');
+            if (buttonElement.innerText === 'Subscribe') {
+                buttonElement.innerHTML = 'Subscribed';
+            }
+            else {
+                buttonElement.innerHTML = 'Subscribe';
+            }
+        }
 
+        localStorage.setItem('score', JSON.stringify(score));
 
+        updateScoreElement();
+
+        document.querySelector('.js-result').innerHTML = result;
+
+        document.querySelector('.js-moves').innerHTML = `You ${playerMove} - ${computerMove} Computer`;
+      }
+      
     </script>
 </body>
 
